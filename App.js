@@ -71,17 +71,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#666666',
   },
   text: {
-    color: 'yellow',
+    color: 'white',
     fontFamily: "sans-serif",
     fontSize: 30
   },
   input: {
-    borderRadius: 50,
+    borderRadius: 30,
     borderWidth: 2,
     fontSize: 20,
-    color: "#fff",
-    backgroundColor: 'maroon',
-    width: 200
+    color: "black",
+    backgroundColor: 'white',
+    width: 250,
+    padding:5
   },
   input1: {
     flex: 1,

@@ -13,7 +13,7 @@ class Forecast extends Component {
            Current Conditions : {this.props.description}
         </Text>
         <Text style = {styles.smallContainer}>
-            {this.props.temp}
+            {`${parseFloat(this.props.temp/10).toFixed(2)}℃`}
         </Text>
     </View>
         );
@@ -22,21 +22,24 @@ class Forecast extends Component {
 
 const styles = StyleSheet.create(
     {
-        bigContainer : {
-        flex:1,
-        width : 400,
-        justifyContent: "center",
-        alignItems:"center",
-        fontFamily: 'Lobster-Regular' 
-    },
-    mediumContainer : {
-        color: "yellow", 
-        fontSize: 30
-    },
-    smallContainer: {
-        fontSize: 25,
-        color: '#FF9875'
+        bigContainer: {
+            marginTop:20,
+            flex: 0.3,
+            backgroundColor: '#009bcbf0',
+            width: 400,
+            borderRadius: 20,
+            justifyContent: "center",
+            alignItems: "center",
+            fontFamily: 'sans-serif'
+        },
+        mediumContainer: {
+            // color: "yellow", 
+            fontSize: 30
+        },
+        smallContainer: {
+            fontSize: 25,
+            color: '#FF9875'
+        }
     }
-}
 );
 export default Forecast;
