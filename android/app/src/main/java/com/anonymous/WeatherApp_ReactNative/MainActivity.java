@@ -8,6 +8,7 @@ import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
 import expo.modules.ReactActivityDelegateWrapper;
+import com.newrelic.agent.android.NewRelic;
 
 public class MainActivity extends ReactActivity {
   @Override
@@ -17,6 +18,9 @@ public class MainActivity extends ReactActivity {
     // This is required for expo-splash-screen.
     setTheme(R.style.AppTheme);
     super.onCreate(null);
+    NewRelic.withApplicationToken(
+"AA33a6a4180d3ed34134ac79f13ff5f49f7f6e7f97-NRMA"
+).start(this.getApplicationContext());
   }
 
   /**
