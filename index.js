@@ -8,7 +8,7 @@ import {Platform} from 'react-native';
     let appToken;
 
     if (Platform.OS === 'ios') {
-        appToken = '<IOS-APP-TOKEN>';
+        appToken = 'AA5705d66179f9c16f13b5b2ba37b9f8e14339ae01-NRMA';
     } else {
         appToken = 'AA33a6a4180d3ed34134ac79f13ff5f49f7f6e7f97-NRMA';
     }

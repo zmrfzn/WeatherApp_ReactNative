@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontFamily: "sans-serif",
+    fontFamily: "Helvetica",
     fontSize: 30
   },
   input: {
     borderRadius: 30,
     borderWidth: 2,
-    fontSize: 20,
+    fontSize: 20,  
     color: "black",
     backgroundColor: 'white',
     width: 250,
