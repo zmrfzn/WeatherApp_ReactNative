@@ -25,7 +25,7 @@ function fetchForecast(zip){
           };
         } catch (error) {
           console.error(`crashing the app - ${error}`)
-          CrashTester.nativeCrash('deliberate crash!');
+          CrashTester.jsCrash('deliberate JS crash!');
         }
       })
       .catch(error => {

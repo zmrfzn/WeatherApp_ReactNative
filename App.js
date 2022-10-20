@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ImageBackground, TextInput, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, TextInput, StyleSheet, Text, View,  NativeModules } from 'react-native';
 import Images from './asset/images';
 import Forecast from './Forecast';
 import Openweather from './openweathermap';
@@ -15,11 +15,21 @@ export default class App extends Component {
 
 
   handleTextChange = event => {
-    let zip = event.nativeEvent.text;
-    Openweather.fetchForecast(zip).then(forecast => {
-      //console.log(forecast);
-      this.setState({ forecast: forecast });
-    });
+
+    if(event.nativeEvent.text.toLowerCase() === 'crashme') {
+      const { CrashTester: NativeModule } = NativeModules;
+      const err =  new Error('Deliberate native crash');
+      console.error(err)
+      NewRelic.recordError(err);
+      NativeModule.nativeCrash(`Forbidden City!! - ${err}`);
+    } else {
+
+      let zip = event.nativeEvent.text;
+      Openweather.fetchForecast(zip).then(forecast => {
+        //console.log(forecast);
+        this.setState({ forecast: forecast });
+      });
+    }
   };
 
 
