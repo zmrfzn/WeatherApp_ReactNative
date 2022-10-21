@@ -1,3 +1,4 @@
+import NewRelic from 'newrelic-react-native-agent';
 import React, { Component } from 'react';
 import { ImageBackground, TextInput, StyleSheet, Text, View,  NativeModules } from 'react-native';
 import Images from './asset/images';
@@ -6,7 +7,11 @@ import Openweather from './openweathermap';
 
 export default class App extends Component {
 
-
+constructor(props) {
+  super(props)
+  console.log('custom metric trigger')
+  NewRelic.recordMetric('Custom Metric',"AppLaunches",1);
+}
 
   state = {
     forecast: null
